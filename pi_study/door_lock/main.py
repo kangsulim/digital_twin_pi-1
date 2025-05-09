@@ -1,5 +1,5 @@
-from config.gpio_config import GpioConfig
-from service.door_lock_service import ModuleService, DoorLockService
+from door_lock.config.gpio_config import GpioConfig
+from door_lock.service.door_lock_service import ModuleService, DoorLockService
 
 if __name__ == "__main__":
     GpioConfig.setMode()

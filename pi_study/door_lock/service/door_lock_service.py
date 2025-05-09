@@ -1,9 +1,9 @@
 from time import sleep
 
 import RPi.GPIO as gpio
-from constant.password import PASSWORD
-from module.led import Led
-from module.button import Button, ButtonEvent
+from door_lock.constant.password import PASSWORD
+from door_lock.module.led import Led
+from door_lock.module.button import Button, ButtonEvent
 from time import sleep
 
 class ModuleService:
