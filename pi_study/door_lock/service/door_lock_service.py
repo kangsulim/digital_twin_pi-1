@@ -57,7 +57,7 @@ class DoorLockService:
     @classmethod
     def setLedOnAndOffButtonEvent(cls, button, led):
         def handleButtonOnClick():
-            led.ledBlink(1, 0.01)
+            led.ledBlink(1, 0.05)
             if len(cls.currentInputPassword) < 3:
                 cls.currentInputPassword += button.value
                 if len(cls.currentInputPassword) == 3:
@@ -74,7 +74,7 @@ class DoorLockService:
         if cls.getPassword() == DoorLockService.currentInputPassword:
             for _ in range(3):
                 for ledModule in ModuleService.getLedMoules():
-                    ledModule.blink(1, 0.5)
+                    ledModule.ledBlink(1, 0.5)
         else:
             for _ in range(3):
                 for ledModule in ModuleService.getLedMoules():
