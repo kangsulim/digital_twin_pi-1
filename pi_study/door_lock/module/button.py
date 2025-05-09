@@ -21,6 +21,7 @@ class Button:
         self.buttonEvent = buttonEvent
 
     def onClick(self):
+        print(self.buttonEvent)
         if self.buttonEvent is not None:
             self.currentState = gpio.input(self.pin)
             if self.currentState == gpio.HIGH and self.prevState == gpio.LOW:
