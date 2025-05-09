@@ -46,9 +46,6 @@ class DoorLockService:
         ModuleService.addButtonModule(button2)
         ModuleService.addButtonModule(button3)
 
-        print(ModuleService.buttonModules)
-        print(ModuleService.ledModules)
-
     @classmethod
     def setLedOnAndOffButtonEvent(cls, button, led):
         def handleButtonOnClick():
