@@ -57,10 +57,7 @@ class DoorLockService:
     @classmethod
     def setLedOnAndOffButtonEvent(cls, button, led):
         def handleButtonOnClick():
-            if button.currentState == gpio.HIGH:
-                led.ledOn()
-            else:
-                led.ledOff()
+            led.ledBlink(1, 0.01)
             if len(cls.currentInputPassword) < 3:
                 cls.currentInputPassword += button.value
             else:
@@ -79,8 +76,8 @@ class DoorLockService:
         else:
             for _ in range(3):
                 for ledModule in ModuleService.getLedMoules():
-                    ledModule.onLed()
+                    ledModule.ledOn()
                 sleep(0.5)
                 for ledModule in ModuleService.getLedMoules():
-                    ledModule.onOff()
+                    ledModule.ledOff()
                 sleep(0.5)
