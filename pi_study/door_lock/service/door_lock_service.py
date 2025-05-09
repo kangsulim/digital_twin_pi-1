@@ -16,7 +16,7 @@ class ModuleService:
 
     @classmethod
     def addButtonModule(cls, button:Button):
-        cls.ledModules.append(button)
+        cls.buttonModules.append(button)
 
     @classmethod
     def getLedMoules(cls):
