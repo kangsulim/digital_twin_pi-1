@@ -60,9 +60,9 @@ class DoorLockService:
             led.ledBlink(1, 0.01)
             if len(cls.currentInputPassword) < 3:
                 cls.currentInputPassword += button.value
-            elif len(cls.currentInputPassword) == 3:
-                cls.checkPassword()
-                cls.currentInputPassword = ""
+                if len(cls.currentInputPassword) == 3:
+                    cls.checkPassword()
+                    cls.currentInputPassword = ""
             else:
                 cls.currentInputPassword = ""
 
