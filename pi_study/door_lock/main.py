@@ -6,8 +6,9 @@ if __name__ == "__main__":
     DoorLockService.setModule()
 
     try:
+        buttons = ModuleService.buttonModules
+        print(buttons)
         while True:
-            buttons = ModuleService.buttonModules
             for button in buttons:
                 button.onClick()
     except KeyboardInterrupt:
