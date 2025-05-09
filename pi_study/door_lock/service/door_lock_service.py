@@ -74,12 +74,12 @@ class DoorLockService:
         if cls.getPassword() == DoorLockService.currentInputPassword:
             for _ in range(3):
                 for ledModule in ModuleService.getLedMoules():
-                    ledModule.ledBlink(1, 0.5)
+                    ledModule.ledBlink(1, 0.1)
         else:
             for _ in range(3):
                 for ledModule in ModuleService.getLedMoules():
                     ledModule.ledOn()
-                sleep(0.5)
+                sleep(0.1)
                 for ledModule in ModuleService.getLedMoules():
                     ledModule.ledOff()
-                sleep(0.5)
+                sleep(0.1)
