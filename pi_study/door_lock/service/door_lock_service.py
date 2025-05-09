@@ -18,6 +18,14 @@ class ModuleService:
     def addButtonModule(cls, button:Button):
         cls.ledModules.append(button)
 
+    @classmethod
+    def getLedMoules(cls):
+        return cls.ledModules
+
+    @classmethod
+    def getButtonMoules(cls):
+        return cls.buttonModules
+
 class DoorLockService:
 
     currentInputPassword = ""
@@ -66,13 +74,13 @@ class DoorLockService:
     def checkPassword(cls):
         if cls.getPassword() == DoorLockService.currentInputPassword:
             for _ in range(3):
-                for ledModule in ModuleService.ledModules:
+                for ledModule in ModuleService.getLedMoules():
                     ledModule.blink(1, 0.5)
         else:
             for _ in range(3):
-                for ledModule in ModuleService.ledModules:
+                for ledModule in ModuleService.getLedMoules():
                     ledModule.onLed()
                 sleep(0.5)
-                for ledModule in ModuleService.ledModules:
+                for ledModule in ModuleService.getLedMoules():
                     ledModule.onOff()
                 sleep(0.5)

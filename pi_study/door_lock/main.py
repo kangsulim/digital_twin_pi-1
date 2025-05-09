@@ -4,10 +4,11 @@ from door_lock.service.door_lock_service import ModuleService, DoorLockService
 if __name__ == "__main__":
     GpioConfig.setMode()
     DoorLockService.setModule()
-    print(ModuleService.buttonModules)
+    print(ModuleService.getLedMoules())
+    print(ModuleService.getButtonMoules())
 
     try:
-        buttons = ModuleService.buttonModules
+        buttons = ModuleService.getButtonMoules()
         print(buttons)
         while True:
             for button in buttons:
