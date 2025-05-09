@@ -1,5 +1,3 @@
-from time import sleep
-
 import RPi.GPIO as gpio
 from door_lock.constant.password import PASSWORD
 from door_lock.module.led import Led
